@@ -5,7 +5,9 @@ function App() {
 
   return (
     <>
-      <h1>hola mundo</h1>
+      <header className="bg-teal-400 py-5">
+        <h1 className="text-center text-4xl font-black">Calculadora de Propina y Consumo</h1>
+      </header>
     </>
   )
 }
