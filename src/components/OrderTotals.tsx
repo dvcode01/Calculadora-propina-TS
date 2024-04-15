@@ -15,7 +15,7 @@ function OrderTotals({order, tip} : OrderTotalsProps) {
     const tipAmount = useMemo(() => subTotalAmount * tip, [tip, order]);
 
     // Calcula el total a pagar
-    const totalMount = useMemo(() => subTotalAmount + tipAmount, [subTotalAmount, tipAmount]);
+    const totalMount = useMemo(() => subTotalAmount + tipAmount, [tip, order]);
 
   return (
     <>
