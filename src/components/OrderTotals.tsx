@@ -33,7 +33,13 @@ function OrderTotals({order, tip} : OrderTotalsProps) {
                 <span className="font-bold">{formatCurrency(totalMount)}</span>
             </p>
         </div>
-        <button></button>
+
+
+        <button
+            className="w-full bg-black p-3 uppercase text-white font-bold mt-10 hover:cursor-pointer hover:bg-teal-800 transition-all duration-300"
+        >
+            Guardar
+        </button>
     </>
   )
 }
