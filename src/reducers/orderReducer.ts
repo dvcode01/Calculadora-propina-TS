@@ -56,9 +56,10 @@ export const orderReducer = (state : OrderState = initialState, action : OrderAc
 
     if(action.type === 'place-items'){
 
-
         return {
-            ...state
+            ...state,
+            order: [],
+            tip: 0
         }
     }
 
