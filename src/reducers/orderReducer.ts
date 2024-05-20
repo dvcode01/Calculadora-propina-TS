@@ -20,10 +20,27 @@ export const initialState : OrderState = {
 
 export const orderReducer = (state : OrderState = initialState, action : OrderActions) => {
     if(action.type === 'add-item'){
+        // Verifica si existen duplicados de ordenes
+        const itemExists = state.order.find(orderItem => orderItem.id === action.payload.item.id);
+
+        let updateOrder: OrderItem[] = [];
+
+        if(itemExists){
+            // Actualiza la cantidad del elemento repetido
+            updateOrder = state.order.map(orderItem => orderItem.id === action.payload.item.id 
+                ? {...orderItem, quantity: orderItem.quantity + 1} 
+                : orderItem
+            );
+        }else{
+            // Lo agrega a la orden 
+            const newItem : OrderItem = {...action.payload.item, quantity: 1};
+            updateOrder = [...state.order, newItem];
+        }
 
 
         return {
-            ...state
+            ...state,
+            order: updateOrder
         }
     }
 
