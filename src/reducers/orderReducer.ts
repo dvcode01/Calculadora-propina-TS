@@ -64,10 +64,11 @@ export const orderReducer = (state : OrderState = initialState, action : OrderAc
 
 
     if(action.type === 'add-tip'){
-
+        const tip = action.payload.value
 
         return {
-            ...state
+            ...state,
+            tip
         }
     }
 
